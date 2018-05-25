@@ -12,7 +12,7 @@ module.exports = {
                 loader: 'ts-loader'
             },
             {
-                test: /\.s?css$/,
+                test: /\.scss$/,
 
                 use: [
                     {
@@ -20,14 +20,12 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader',
-
                         options: {
                             sourceMap: true
                         }
                     },
                     {
                         loader: 'sass-loader',
-
                         options: {
                             includePaths: [
                                 path.resolve(__dirname, './node_modules')
@@ -36,6 +34,17 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'img/[hash].[ext]'
+                }
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
             }
         ]
     },
