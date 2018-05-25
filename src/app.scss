@@ -138,3 +138,39 @@ $experience-detail-width: 192px;
         max-width: 100%;
     }
 }
+
+footer {
+    background-color: $mdc-theme-secondary;
+    padding: 24px 0;
+
+    & > div {
+        margin: 0 auto;
+        max-width: $section-width;
+    }
+
+    h2,
+    a {
+        margin-left: $section-item-margin-x;
+        margin-right: $section-item-margin-x;
+    }
+
+    h2 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    a {
+        display: block;
+        margin-top: 6px;
+        margin-bottom: 6px;
+
+        &:hover {
+            color: darken($mdc-theme-secondary, 12%);
+        }
+    }
+
+    svg {
+        margin-right: 12px;
+        width: 16px;
+        min-width: 16px;
+    }
+}
