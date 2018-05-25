@@ -1,0 +1,50 @@
+@import '~@material/theme/variables';
+@import '~@material/typography/mdc-typography';
+@import '~@material/button/mdc-button';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: $mdc-theme-on-primary;
+    text-decoration: inherit;
+}
+
+header {
+    background: linear-gradient(
+        0deg,
+        lighten($mdc-theme-primary, 30%),
+        lighten($mdc-theme-primary, 10%)
+    );
+    color: $mdc-theme-on-primary;
+    padding: 24px;
+    text-align: center;
+
+    & > * {
+        margin: 16px 0px;
+    }
+
+    .icons {
+        & a {
+            font-size: 1.5rem;
+            margin: 0px 32px;
+            min-width: 36px;
+            width: 36px;
+
+            &:hover {
+                color: $mdc-theme-on-primary;
+                background-color: $mdc-theme-primary;
+            }
+        }
+    }
+
+    .mdc-button:not(:disabled) {
+        background-color: $mdc-theme-on-primary;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}
