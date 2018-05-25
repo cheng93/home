@@ -1,4 +1,5 @@
 @import '~@material/theme/variables';
+@import '~@material/theme/mdc-theme';
 @import '~@material/typography/mdc-typography';
 @import '~@material/button/mdc-button';
 
@@ -42,6 +43,22 @@ header {
 
     .mdc-button:not(:disabled) {
         background-color: $mdc-theme-on-primary;
+    }
+}
+
+section {
+    border-bottom: 1px solid #dadce0;
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 48px 0;
+
+    h2 {
+        margin: 24px;
+        text-align: center;
+    }
+
+    p {
+        margin: 12px 24px;
     }
 }
 
