@@ -5,3 +5,6 @@ import faLinkedinIn from '@fortawesome/fontawesome-free-brands/faLinkedinIn';
 fontawesome.library.add(faGithub, faLinkedinIn);
 
 import './app.scss';
+
+import './img/cloudbuy.jpg';
+import './img/empactis.jpg';

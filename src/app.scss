@@ -55,9 +55,9 @@ section {
     max-width: $section-width;
     padding: 48px 0;
 
-    h2,
-    p,
-    div {
+    & > h2,
+    & > p,
+    & > div {
         margin-left: $section-item-margin-x;
         margin-right: $section-item-margin-x;
     }
@@ -107,5 +107,34 @@ $skills-item-basis: 132px;
         div {
             flex: 1 1 $skills-item-basis;
         }
+    }
+}
+
+$experience-a-basis: 230px;
+$experience-detail-width: 192px;
+
+.experience {
+    & > div {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    a {
+        flex: 0 1 $experience-a-basis + $experience-detail-width +
+            ($section-item-margin-x * 2);
+        margin-bottom: 12px;
+
+        @media (min-width: $experience-a-basis + $experience-detail-width + ($section-item-margin-x * 2)) {
+            flex: 0 1 $experience-a-basis;
+            margin-bottom: 0px;
+        }
+    }
+
+    img {
+        max-height: 70px;
+        max-width: 100%;
     }
 }
