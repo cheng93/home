@@ -1,6 +1,7 @@
 @import '~@material/theme/variables';
 @import '~@material/theme/mdc-theme';
 @import '~@material/typography/mdc-typography';
+@import '~@material/card/mdc-card';
 @import '~@material/button/mdc-button';
 
 $section-width: 750px;
@@ -136,6 +137,37 @@ $experience-detail-width: 192px;
     img {
         max-height: 70px;
         max-width: 100%;
+    }
+}
+
+$playground-card-width: 280px;
+
+.playground {
+    display: flex;
+    flex-wrap: wrap;
+
+    h2 {
+        flex: 1 1 $section-width;
+    }
+
+    & > div {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: $playground-card-width;
+
+        & > h3,
+        & > p {
+            margin: 12px $section-item-margin-x;
+        }
+
+        & > div {
+            margin: 12px 8px;
+
+            & a {
+                justify-content: flex-start;
+                min-width: inherit;
+            }
+        }
     }
 }
 
