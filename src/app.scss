@@ -3,6 +3,9 @@
 @import '~@material/typography/mdc-typography';
 @import '~@material/button/mdc-button';
 
+$section-width: 750px;
+$section-item-margin-x: 24px;
+
 * {
     padding: 0;
     margin: 0;
@@ -49,19 +52,60 @@ header {
 section {
     border-bottom: 1px solid #dadce0;
     margin: 0 auto;
-    max-width: 750px;
+    max-width: $section-width;
     padding: 48px 0;
 
+    h2,
+    p,
+    div {
+        margin-left: $section-item-margin-x;
+        margin-right: $section-item-margin-x;
+    }
     h2 {
-        margin: 24px;
-        text-align: center;
+        margin-top: 24px;
+        margin-bottom: 24px;
     }
 
     p {
-        margin: 12px 24px;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 }
 
 .circle {
     border-radius: 50%;
+}
+
+$skills-item-basis: 132px;
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    h2 {
+        flex: 1 1 $section-width;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    div {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        flex: 0 1 $skills-item-basis;
+
+        @media (min-width: ($skills-item-basis + $section-item-margin-x * 2) * 4) {
+            flex: 0 1 ($section-width / 4) - ($section-item-margin-x * 2) + 1;
+        }
+    }
+
+    @media (min-width: ($skills-item-basis * 2) + ($section-item-margin-x * 4)) and (max-width: ($skills-item-basis * 3) + ($section-item-margin-x * 6) -1) {
+        justify-content: flex-start;
+
+        div {
+            flex: 1 1 $skills-item-basis;
+        }
+    }
 }
