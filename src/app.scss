@@ -1,0 +1,208 @@
+@import '~@material/theme/variables';
+@import '~@material/theme/mdc-theme';
+@import '~@material/typography/mdc-typography';
+@import '~@material/card/mdc-card';
+@import '~@material/button/mdc-button';
+
+$section-width: 750px;
+$section-item-margin-x: 24px;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: $mdc-theme-on-primary;
+    text-decoration: inherit;
+}
+
+header {
+    background: linear-gradient(
+        0deg,
+        lighten($mdc-theme-primary, 30%),
+        lighten($mdc-theme-primary, 10%)
+    );
+    color: $mdc-theme-on-primary;
+    padding: 24px;
+    text-align: center;
+
+    & > * {
+        margin: 16px 0px;
+    }
+
+    .icons {
+        & a {
+            font-size: 1.5rem;
+            margin: 0px 32px;
+            min-width: 36px;
+            width: 36px;
+
+            &:hover {
+                color: $mdc-theme-on-primary;
+                background-color: $mdc-theme-primary;
+            }
+        }
+    }
+
+    .mdc-button:not(:disabled) {
+        background-color: $mdc-theme-on-primary;
+    }
+}
+
+section {
+    border-bottom: 1px solid #dadce0;
+    margin: 0 auto;
+    max-width: $section-width;
+    padding: 48px 0;
+
+    & > h2,
+    & > p,
+    & > div {
+        margin-left: $section-item-margin-x;
+        margin-right: $section-item-margin-x;
+    }
+    h2 {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    p {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+$skills-item-basis: 132px;
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    h2 {
+        flex: 1 1 $section-width;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    div {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        flex: 0 1 $skills-item-basis;
+
+        @media (min-width: ($skills-item-basis + $section-item-margin-x * 2) * 4) {
+            flex: 0 1 ($section-width / 4) - ($section-item-margin-x * 2) + 1;
+        }
+    }
+
+    @media (min-width: ($skills-item-basis * 2) + ($section-item-margin-x * 4)) and (max-width: ($skills-item-basis * 3) + ($section-item-margin-x * 6) -1) {
+        justify-content: flex-start;
+
+        div {
+            flex: 1 1 $skills-item-basis;
+        }
+    }
+}
+
+$experience-a-basis: 230px;
+$experience-detail-width: 192px;
+
+.experience {
+    & > div {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    a {
+        flex: 0 1 $experience-a-basis + $experience-detail-width +
+            ($section-item-margin-x * 2);
+        margin-bottom: 12px;
+
+        @media (min-width: $experience-a-basis + $experience-detail-width + ($section-item-margin-x * 2)) {
+            flex: 0 1 $experience-a-basis;
+            margin-bottom: 0px;
+        }
+    }
+
+    img {
+        max-height: 70px;
+        max-width: 100%;
+    }
+}
+
+$playground-card-width: 280px;
+
+.playground {
+    display: flex;
+    flex-wrap: wrap;
+
+    h2 {
+        flex: 1 1 $section-width;
+    }
+
+    & > div {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        width: $playground-card-width;
+
+        & > h3,
+        & > p {
+            margin: 12px $section-item-margin-x;
+        }
+
+        & > div {
+            margin: 12px 8px;
+
+            & a {
+                justify-content: flex-start;
+                min-width: inherit;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $mdc-theme-secondary;
+    padding: 24px 0;
+
+    & > div {
+        margin: 0 auto;
+        max-width: $section-width;
+    }
+
+    h2,
+    a {
+        margin-left: $section-item-margin-x;
+        margin-right: $section-item-margin-x;
+    }
+
+    h2 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    a {
+        display: block;
+        margin-top: 6px;
+        margin-bottom: 6px;
+
+        &:hover {
+            color: darken($mdc-theme-secondary, 12%);
+        }
+    }
+
+    svg {
+        margin-right: 12px;
+        width: 16px;
+        min-width: 16px;
+    }
+}

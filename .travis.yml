@@ -1,0 +1,17 @@
+cache: yarn
+
+notifications:
+  email: false
+
+services:
+  - docker
+
+install:
+  - yarn install
+
+script:
+  - yarn build
+
+after_success:
+  - docker build -t home .
+  - bash ./scripts/travis_docker.sh
