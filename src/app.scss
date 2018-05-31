@@ -143,16 +143,15 @@ $experience-detail-width: 192px;
 $playground-card-width: 280px;
 
 .playground {
-    display: flex;
-    flex-wrap: wrap;
-
-    h2 {
-        flex: 1 1 $section-width;
+    & > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
-    & > div {
-        margin-top: 12px;
-        margin-bottom: 12px;
+    & .mdc-card {
+        margin: 12px;
         width: $playground-card-width;
 
         & > h3,
