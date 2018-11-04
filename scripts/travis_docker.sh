@@ -1,4 +1,6 @@
 #!/bin/bash
+echo $TRAVIS_TAG;
+echo $TRAVIS_BRANCH;
 
 if [ "$TRAVIS_BRANCH" == "master" ]
 then
